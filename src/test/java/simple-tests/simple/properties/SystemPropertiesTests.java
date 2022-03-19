@@ -1,8 +1,7 @@
-package tests.properties;
+package simpletests.simple.properties;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import org.junit.platform.commons.util.StringUtils;
 
 @Tag(value = "properties")
 public class SystemPropertiesTests {
