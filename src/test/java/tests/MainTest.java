@@ -33,15 +33,13 @@ public class MainTest extends BaseData {
         reportsFolder = "test-result/reports";
         SelenideLogger.addListener("allure", new AllureSelenide());
 
-
+        // модуль для формирования скриншетов и видео прохождения тестов в среде selenoid
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
         Configuration.browserCapabilities = capabilities;
-//        Configuration.startMaximized = true;
-//        Configuration.remote = getSelenoidUrl();
     }
 
     @Test
@@ -49,8 +47,6 @@ public class MainTest extends BaseData {
     @Link(name = "Testing", url = "https://demoqa.com")
     @DisplayName(" - Заполнение формы и контроль результатов -")
     public void openTest() {
-
-
         Allure.step(" Открытие сайта " + baseUrl, () -> {
             app.openSite()
                     .verifyTitle();
